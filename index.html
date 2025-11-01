@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCNC - Botnet Educacional</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🌐 SkyCNC</h1>
+                <p class="subtitle">Sistema Educacional de Análise de Botnets</p>
+            </div>
+        </header>
+
+        <div class="warning-banner">
+            <span class="warning-icon">⚠️</span>
+            <p><strong>AVISO EDUCACIONAL:</strong> Este é um sistema educacional para entender como funcionam botnets. Não use em dispositivos sem autorização. Use apenas para fins educativos e de pesquisa autorizada.</p>
+        </div>
+
+        <main class="main-content">
+            <section class="info-section">
+                <h2>📚 O que é uma Botnet?</h2>
+                <p>Uma botnet é uma rede de computadores ou dispositivos IoT infectados que são controlados remotamente por um operador. Este sistema demonstra como funcionam tais redes para fins educacionais.</p>
+            </section>
+
+            <div class="dashboard-grid">
+                <div class="card stats-card">
+                    <h3>📊 Estatísticas</h3>
+                    <div class="stat-item">
+                        <span class="stat-label">Dispositivos Conectados:</span>
+                        <span class="stat-value" id="totalDevices">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Câmeras Online:</span>
+                        <span class="stat-value" id="onlineCameras">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Dispositivos IoT:</span>
+                        <span class="stat-value" id="totalIoT">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Taxa de Uptime:</span>
+                        <span class="stat-value" id="uptimeRate">0%</span>
+                    </div>
+                </div>
+
+                <div class="card action-card">
+                    <h3>🔧 Gerenciamento</h3>
+                    <form id="addDeviceForm" class="device-form">
+                        <div class="form-group">
+                            <label for="deviceIp">Endereço IP:</label>
+                            <input type="text" id="deviceIp" placeholder="192.168.1.100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deviceType">Tipo de Dispositivo:</label>
+                            <select id="deviceType" required>
+                                <option value="camera">Câmera IP</option>
+                                <option value="router">Roteador</option>
+                                <option value="iot">Dispositivo IoT</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="devicePort">Porta:</label>
+                            <input type="number" id="devicePort" placeholder="8080" value="8080" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="deviceStatus">Status:</label>
+                            <select id="deviceStatus" required>
+                                <option value="online">Online</option>
+                                <option value="offline">Offline</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">➕ Adicionar Dispositivo</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card devices-card">
+                <div class="card-header">
+                    <h3>🖥️ Dispositivos Conectados</h3>
+                    <button class="btn btn-secondary" id="refreshBtn">🔄 Atualizar</button>
+                </div>
+                <div class="devices-table-container">
+                    <table class="devices-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Endereço IP</th>
+                                <th>Tipo</th>
+                                <th>Porta</th>
+                                <th>Status</th>
+                                <th>Última Atualização</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="devicesTableBody">
+                            <tr>
+                                <td colspan="7" class="empty-state">Nenhum dispositivo cadastrado ainda. Adicione um dispositivo acima.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card commands-card">
+                <h3>📡 Comandos Educacionais</h3>
+                <div class="commands-grid">
+                    <button class="cmd-btn" data-cmd="ping">📡 Ping</button>
+                    <button class="cmd-btn" data-cmd="status">📊 Verificar Status</button>
+                    <button class="cmd-btn" data-cmd="info">ℹ️ Informações</button>
+                    <button class="cmd-btn" data-cmd="test">🧪 Teste de Conectividade</button>
+                </div>
+                <div id="commandOutput" class="command-output"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>SkyCNC - Sistema Educacional | Desenvolvido para fins educativos e de pesquisa</p>
+            <p class="footer-small">⚠️ Sempre obtenha autorização antes de acessar qualquer dispositivo</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
